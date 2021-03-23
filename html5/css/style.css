@@ -1,6 +1,8 @@
 /* 레이아웃 */
-#header {
+body {
   background: url(../img/header_bg.jpg) repeat-x center top;
+}
+#header {
 }
 #nav {
   background-color: #f6fdff;
@@ -12,9 +14,7 @@
 /* 컨테이너 */
 .container {
   width: 1200px;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.3);
-  font-family: 'Abel', sans-serif;
+  margin: 0 auto; /* background: rgba(0,0,0,0.3); */
 }
 
 /* 헤더 */
@@ -29,6 +29,7 @@
   padding: 8px 0 6px 10px;
   display: inline-block;
   transition: color 0.3s ease;
+  font-family: 'Abel', sans-serif;
 }
 .header .header_menu a:hover {
   color: #ccc;
@@ -70,7 +71,7 @@
 .header .header_icon {
   text-align: center;
   margin-top: 40px;
-  margin-bottom: 45px;
+  padding-bottom: 45px;
 }
 .header .header_icon li {
   display: inline;
@@ -101,7 +102,7 @@
   opacity: 0;
   transition: all 0.3s ease;
 }
-.header .header_icon li a span::before {
+.header .header_icon li a span:before {
   content: '';
   position: absolute;
   left: 50%;
@@ -124,6 +125,7 @@
 .nav {
   overflow: hidden;
   padding: 25px 0;
+  display: none;
 }
 .nav > div {
   float: left;
@@ -169,9 +171,9 @@
   display: inline-block;
   width: 0;
   height: 1px;
-  position: absolute;
-  background-color: #25aad0;
+  background: #25aad0;
   transition: all 0.2s ease-out;
+  position: absolute;
   bottom: 0;
   left: 0;
 }
@@ -197,23 +199,92 @@
   width: 60px;
   height: 60px;
   line-height: 60px;
-  background-color: #3192bf;
+  background: #3192bf;
   color: #fff;
   font-size: 35px;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 .title .btn:hover {
-  box-shadow: 0 0 0 3px rgba(75, 154, 191, 0.9) inset,
+  box-shadow: 0 0 0 3px rgba(71, 154, 191, 0.9) inset,
     0 0 0 100px rgba(0, 0, 0, 0.1) inset;
 }
 
 /* mediaquery */
+/* 화면 너비 0 ~ 1220px */
 @media (max-width: 1220px) {
   .container {
     width: 100%;
   }
   .row {
     padding: 0 15px;
+  }
+  .title .btn {
+    right: 5px;
+  }
+}
+
+/* 화면 너비 0 ~ 1024px */
+@media (max-width: 1024px) {
+}
+
+/* 화면 너비 0 ~ 960px */
+@media (max-width: 960px) {
+  .nav > div {
+    float: none;
+    width: 100%;
+  }
+  .nav > div:last-child {
+    width: 100%;
+  }
+  .nav > div li {
+    width: 33.33333%;
+  }
+  .nav > div:last-child li {
+    width: 33.33333%;
+  }
+  .nav > div ol {
+    margin-bottom: 10px;
+  }
+}
+
+/* 화면 너비 0 ~ 768px */
+@media (max-width: 768px) {
+}
+
+/* 화면 너비 0 ~ 600px */
+@media (max-width: 600px) {
+  .header {
+    height: auto;
+  }
+  .header .header_tit {
+    display: none;
+  }
+  .header .header_icon {
+    display: none;
+  }
+  .title .btn {
+    display: none;
+  }
+
+  .nav > div li {
+    width: 50%;
+  }
+  .nav > div:last-child li {
+    width: 50%;
+  }
+}
+
+/* 화면 너비 0 ~ 480px */
+@media (max-width: 480px) {
+}
+
+/* 화면 너비 0 ~ 320px */
+@media (max-width: 320px) {
+  .nav > div li {
+    width: 100%;
+  }
+  .nav > div:last-child li {
+    width: 100%;
   }
 }
