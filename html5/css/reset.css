@@ -84,7 +84,8 @@ button {
 }
 
 /* 반응형 이미지 */
-img {
+img,
+video {
   width: 100%;
 }
 
